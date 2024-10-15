@@ -34,9 +34,16 @@ const ListaUsuario: React.FC = () => {
       {error && <p className="text-red-500">{error}</p>}
       <ul className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-4">
         {users.length > 0 ? (
-          users.map((user, index) => (
-            <li key={index} className="border-b border-gray-700 py-2">
-              {user.nome} - {user.email}
+          users.map((user) => (
+            <li key={user.id} className="border-b border-gray-700 py-4 flex justify-between text-left">
+              <div>
+                <p className="font-semibold">{user.nome}</p>
+                <p>CPF: {user.cpf}</p>
+                <p>Data de Nascimento: {user.dataNascimento}</p>
+              </div>
+              <span className={`text-sm ${user.ativo ? 'text-green-400' : 'text-red-400'}`}>
+                {user.ativo ? 'Ativo' : 'Inativo'}
+              </span>
             </li>
           ))
         ) : (

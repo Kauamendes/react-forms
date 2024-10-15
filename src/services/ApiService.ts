@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Usuario } from '../interfaces/usuario';
 
 const apiClient = axios.create({
-    baseURL: 'https://cqdz4sb6-5165.brs.devtunnels.ms/',
+    baseURL: 'http://localhost:8080',
     headers: {
         'Content-Type': 'application/json'
     }

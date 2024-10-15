@@ -58,13 +58,23 @@ const CadastroUsuario: React.FC = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block mb-1 text-left">Função</label>
+          <label className="block mb-1 text-left">CPF</label>
           <input
             type="text"
-            {...register('funcao', { required: 'Função é obrigatória' })}
-            className={`w-full p-2 rounded bg-gray-700 text-white border ${errors.funcao ? 'border-red-500' : 'border-transparent'}`}
+            {...register('cpf', { required: 'CPF é obrigatório' })}
+            className={`w-full p-2 rounded bg-gray-700 text-white border ${errors.cpf ? 'border-red-500' : 'border-transparent'}`}
           />
-          {errors.funcao && <p className="text-red-500">{errors.funcao.message}</p>}
+          {errors.cpf && <p className="text-red-500">{errors.cpf.message}</p>}
+        </div>
+
+        <div className="mb-4">
+          <label className="block mb-1 text-left">Data nascimento</label>
+          <input
+            type="text"
+            {...register('dataNascimento', { required: 'Data nascimento é obrigatória' })}
+            className={`w-full p-2 rounded bg-gray-700 text-white border ${errors.dataNascimento ? 'border-red-500' : 'border-transparent'}`}
+          />
+          {errors.dataNascimento && <p className="text-red-500">{errors.dataNascimento.message}</p>}
         </div>
 
         <button
